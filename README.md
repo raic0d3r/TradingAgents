@@ -106,13 +106,20 @@ cd TradingAgents
 
 Create a virtual environment in any of your favorite environment managers:
 ```bash
-conda create -n tradingagents python=3.12
-conda activate tradingagents
+python -m venv .venv
+dir .venv
+.\.venv\Scripts\Activate.ps1
+```
+If PowerShell blocks the script:
+```bash
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
 ```
 
 Install the package and its dependencies:
 ```bash
-pip install .
+python -m pip install --upgrade pip
+python -m pip install -e .
 ```
 
 ### Docker
